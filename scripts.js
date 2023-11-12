@@ -82,7 +82,15 @@ function uploadStep(currentSteps) {
 		})
 
 	}
+	scrollToTop();
+}
+//скролл до початку попапу
+function scrollToTop() {
+	// Знаходимо контейнер форми (замість '.brif_form', використовуйте селектор для вашого контейнера)
+	let formContainer = document.querySelector('.brif_form');
 
+	// Прокручуємо до верху контейнера форми
+	formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 //Навігація
@@ -153,6 +161,10 @@ function validateFieldsForStep1() {
 	if (inputName.trim() === '' || inputTel.trim() === '' || inputEmail.trim() === '') {
 		alert('Будь ласка, заповніть всі поля.');
 		return false; // Валідація не пройдена
+	}
+	if (!inputEmail.includes('@')) {
+		alert('Будь ласка, заповніть поле email коректно.');
+		return false;
 	}
 
 	return true; // Валідація пройдена

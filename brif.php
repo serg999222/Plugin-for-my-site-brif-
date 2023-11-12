@@ -6,14 +6,7 @@
  * Version: 1.0.0
  * Author: bla
  */
-//$css_path =plugins_url('style.css', __FILE__);
-//wp_enqueue_style('custom_form_style',$css_path);
 
-/*function enqueue_custom_script() {
-	$script_url = plugins_url('scripts.js', __FILE__);
-	wp_enqueue_script('custom_scripts', $script_url);
-}
-add_action('wp_enqueue_scripts', 'enqueue_custom_script');*/
 
 function enqueue_custom_styles() {
 	$script_url = plugins_url('scripts.js', __FILE__);
@@ -204,6 +197,8 @@ function handle_custom_form() {
 
 		// Відправка електронної пошти
 		wp_mail($to, $subject, $form_data, $headers);
+		wp_redirect('http://localhost/train-site/');
+		exit; 
 	}
 }
 
