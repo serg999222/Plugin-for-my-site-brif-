@@ -82,7 +82,7 @@ function uploadStep(currentSteps) {
 		})
 
 	}
-	scrollToTop();
+
 }
 //скролл до початку попапу
 function scrollToTop() {
@@ -103,11 +103,13 @@ function nextStep() {
 
 	currentSteps += 1;
 	uploadStep(currentSteps);
+	scrollToTop();
 }
 
 function prevStep() {
 	currentSteps -= 1;
 	uploadStep(currentSteps);
+	scrollToTop();
 }
 
 //Валідація============================================================================================
